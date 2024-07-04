@@ -5,7 +5,7 @@ export const usePathfinding = () => {
     const context = useContext(PathfindingContext);
 
     if (!context) {
-        throw new Error("usePathFinding must be used within a PathfindingContext");
+        throw new Error("usePathfinding must be used within a PathfindingContext");
     }
 
     return context;
