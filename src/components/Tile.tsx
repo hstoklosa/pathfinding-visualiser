@@ -9,6 +9,8 @@ import {
     WALL_TILE_STYLE,
 } from "../utils/constants";
 
+type MouseFunction = (row: number, col: number) => void;
+
 export const Tile = ({
     row,
     col,
@@ -17,6 +19,9 @@ export const Tile = ({
     isWall,
     isPath,
     isTraversed,
+    handleMouseDown,
+    handleMouseUp,
+    handleMouseEnter,
 }: {
     row: number;
     col: number;
@@ -25,6 +30,9 @@ export const Tile = ({
     isWall: boolean;
     isPath: boolean;
     isTraversed: boolean;
+    handleMouseDown: MouseFunction;
+    handleMouseUp: MouseFunction;
+    handleMouseEnter: MouseFunction;
 }) => {
     let styleType;
 
@@ -51,6 +59,9 @@ export const Tile = ({
         <div
             className={twMerge(styleType, borderStyle, edgeStyle)}
             id={`${row}-${col}`}
+            onMouseDown={() => handleMouseDown(row, col)}
+            onMouseUp={() => handleMouseUp(row, col)}
+            onMouseEnter={() => handleMouseEnter(row, col)}
         />
     );
 };
