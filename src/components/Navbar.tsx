@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Select } from "./Select.tsx";
-import { usePathfinding } from "../hooks/usePathfinding.tsx";
-import { useTile } from "../hooks/useTile.tsx";
-import { resetGrid } from "../helpers/grid.tsx";
-import { MAZE_LIST } from "../utils/constants.tsx";
-import { MazeType } from "../utils/types.tsx";
+import { Select } from "./Select";
+import { usePathfinding } from "../hooks/usePathfinding";
+import { useTile } from "../hooks/useTile";
+import { resetGrid } from "../helpers/grid";
+import { MAZE_LIST } from "../utils/constants";
+import { MazeType } from "../utils/types";
 
 export const Navbar = () => {
     const [isDisabled, setIsDisabled] = useState(false);
