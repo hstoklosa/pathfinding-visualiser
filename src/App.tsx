@@ -6,13 +6,13 @@ import { TileProvider } from "./context/TileContext";
 import { SpeedProvider } from "./context/SpeedContext";
 
 function App() {
-    const isVisRunningRef = useRef();
+    const isVisRunningRef = useRef(false);
 
     return (
         <PathfindingProvider>
             <TileProvider>
                 <SpeedProvider>
-                    <div className="h-screen w-screen flex flex-col ">
+                    <div className="h-screen w-screen flex flex-col">
                         <Navbar />
                         <Grid isVisRunningRef={isVisRunningRef} />
                     </div>
