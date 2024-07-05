@@ -12,7 +12,18 @@ export const Navbar = () => {
     const { grid, maze, setMaze, algorithm } = usePathfinding();
     const { startTile, endTile } = useTile();
 
-    const handleGenerateMaze = (maze: MazeType) => {};
+    const handleGenerateMaze = (maze: MazeType) => {
+        if (maze === "NONE") {
+            setMaze(maze);
+            resetGrid({ grid, startTile, endTile });
+            return;
+        }
+
+        setMaze(maze);
+        setIsDisabled(true);
+
+        // TODO: runMazeAlgorithm
+    };
 
     return (
         <div className="flex items-center justify-center min-h-[4.5rem] border-b shadow-gray-600 sm:px-5 px-0">
