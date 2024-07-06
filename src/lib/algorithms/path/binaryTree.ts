@@ -28,7 +28,7 @@ export const binaryTree = async (
 
     // _ += 2 results in iterating over odd rows and columns
     for (let row = 1; row < MAX_ROWS; row += 2) {
-        for (let col = 1; col < MAX_COLS; row += 2) {
+        for (let col = 1; col < MAX_COLS; col += 2) {
             if (row === MAX_ROWS - 2 && col === MAX_COLS - 2) {
                 continue;
             } else if (row === MAX_ROWS - 2) {
