@@ -2,15 +2,18 @@ import { useState } from "react";
 import { Select } from "./Select";
 import { usePathfinding } from "../hooks/usePathfinding";
 import { useTile } from "../hooks/useTile";
+import { useSpeed } from "../hooks/useSpeed";
 import { resetGrid } from "../helpers/grid";
 import { MAZE_LIST } from "../utils/constants";
 import { MazeType } from "../utils/types";
+import { runMazeAlgorithm } from "../utils/runMazeAlgorithm";
 
 export const Navbar = () => {
     const [isDisabled, setIsDisabled] = useState(false);
 
     const { grid, maze, setMaze, algorithm } = usePathfinding();
     const { startTile, endTile } = useTile();
+    const { speed } = useSpeed();
 
     const handleGenerateMaze = (maze: MazeType) => {
         if (maze === "NONE") {
@@ -21,8 +24,14 @@ export const Navbar = () => {
 
         setMaze(maze);
         setIsDisabled(true);
-
-        // TODO: runMazeAlgorithm
+        runMazeAlgorithm({
+            maze,
+            grid,
+            startTile,
+            endTile,
+            setIsDisabled,
+            speed,
+        });
     };
 
     return (
