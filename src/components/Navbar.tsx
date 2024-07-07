@@ -11,7 +11,7 @@ import { runMazeAlgorithm } from "../utils/runMazeAlgorithm";
 export const Navbar = () => {
     const [isDisabled, setIsDisabled] = useState(false);
 
-    const { grid, maze, setMaze, algorithm } = usePathfinding();
+    const { grid, maze, setMaze, setGrid, setIsGraphVisualised } = usePathfinding();
     const { startTile, endTile } = useTile();
     const { speed } = useSpeed();
 
@@ -32,6 +32,10 @@ export const Navbar = () => {
             setIsDisabled,
             speed,
         });
+
+        // assign a shallow copy and discard previous graph
+        setGrid(grid.slice());
+        setIsGraphVisualised(false);
     };
 
     return (
