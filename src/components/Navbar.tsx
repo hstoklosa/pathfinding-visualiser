@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Select } from "./Select";
+import { PlayButton } from "./PlayButton";
 import { usePathfinding } from "../hooks/usePathfinding";
 import { useTile } from "../hooks/useTile";
 import { useSpeed } from "../hooks/useSpeed";
@@ -7,6 +8,7 @@ import { resetGrid } from "../helpers/grid";
 import { ALGORITHM_LIST, MAZE_LIST } from "../utils/constants";
 import { AlgorithmType, MazeType } from "../utils/types";
 import { runMazeAlgorithm } from "../utils/runMazeAlgorithm";
+import { runPathfindingAlgorithm } from "../utils/runPathfindingAlgorithm";
 
 export const Navbar = () => {
     const [isDisabled, setIsDisabled] = useState(false);
@@ -15,6 +17,7 @@ export const Navbar = () => {
         grid,
         maze,
         algorithm,
+        isGraphVisualised,
         setMaze,
         setGrid,
         setIsGraphVisualised,
@@ -46,6 +49,25 @@ export const Navbar = () => {
         setIsGraphVisualised(false);
     };
 
+    const handleRunVisualiser = () => {
+        if (isGraphVisualised) {
+            setIsGraphVisualised(false);
+            resetGrid({ grid: grid.slice(), startTile, endTile });
+            return;
+        }
+
+        // run the algorithm
+        const { traversedTiles, path } = runPathfindingAlgorithm({
+            algorithm,
+            grid,
+            startTile,
+            endTile,
+        });
+
+        console.log("traversedTiles ", traversedTiles);
+        console.log("path ", path);
+    };
+
     return (
         <div className="flex items-center justify-center min-h-[4.5rem] border-b shadow-gray-600 sm:px-5 px-0">
             <div className="flex items-center lg:justify-between justify-center w-full sm:w-[52rem]">
@@ -64,6 +86,12 @@ export const Navbar = () => {
                     value={algorithm}
                     options={ALGORITHM_LIST}
                     onChange={(e) => setAlgorithm(e.target.value as AlgorithmType)}
+                />
+
+                <PlayButton
+                    isDisabled={isDisabled}
+                    isGraphVisualised={isGraphVisualised}
+                    handleRunVisualiser={handleRunVisualiser}
                 />
             </div>
         </div>
