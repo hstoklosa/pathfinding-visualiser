@@ -13,7 +13,7 @@ function App() {
             <TileProvider>
                 <SpeedProvider>
                     <div className="h-screen w-screen flex flex-col">
-                        <Navbar />
+                        <Navbar isVisRunningRef={isVisRunningRef} />
                         <Grid isVisRunningRef={isVisRunningRef} />
                     </div>
                 </SpeedProvider>
