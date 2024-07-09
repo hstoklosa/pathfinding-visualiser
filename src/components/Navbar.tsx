@@ -33,10 +33,9 @@ export const Navbar = ({
         setGrid,
         setIsGraphVisualised,
         setAlgorithm,
-        setSpeed,
     } = usePathfinding();
     const { startTile, endTile } = useTile();
-    const { speed } = useSpeed();
+    const { speed, setSpeed } = useSpeed();
 
     const handleGenerateMaze = (maze: MazeType) => {
         if (maze === "NONE") {
