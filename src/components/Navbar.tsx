@@ -12,7 +12,7 @@ import {
     MAZE_LIST,
     SPEED_LIST,
 } from "../utils/constants";
-import { AlgorithmType, MazeType } from "../utils/types";
+import { AlgorithmType, MazeType, SpeedType } from "../utils/types";
 import { runMazeAlgorithm } from "../utils/runMazeAlgorithm";
 import { runPathfindingAlgorithm } from "../utils/runPathfindingAlgorithm";
 import { animatePath } from "../utils/animatePath";
@@ -33,6 +33,7 @@ export const Navbar = ({
         setGrid,
         setIsGraphVisualised,
         setAlgorithm,
+        setSpeed,
     } = usePathfinding();
     const { startTile, endTile } = useTile();
     const { speed } = useSpeed();
@@ -106,6 +107,13 @@ export const Navbar = ({
                     value={algorithm}
                     options={ALGORITHM_LIST}
                     onChange={(e) => setAlgorithm(e.target.value as AlgorithmType)}
+                />
+
+                <Select
+                    label="Speed"
+                    value={speed}
+                    options={SPEED_LIST}
+                    onChange={(e) => setSpeed(parseInt(e.target.value) as SpeedType)}
                 />
 
                 <PlayButton
