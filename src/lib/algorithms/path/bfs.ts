@@ -27,8 +27,10 @@ export const bfs = (grid: GridType, startTile: TileType, endTile: TileType) => {
         for (let i = 0; i < neighbours.length; i++) {
             if (!isInQueue(neighbours[i], unTraversedTiles)) {
                 const neighbour = neighbours[i];
+
                 neighbour.distance = tile.distance + 1;
                 neighbour.parent = tile;
+
                 unTraversedTiles.push(neighbour);
             }
         }

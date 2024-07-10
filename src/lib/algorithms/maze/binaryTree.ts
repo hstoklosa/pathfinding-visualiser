@@ -1,6 +1,5 @@
 import { GridType, TileType, SpeedType } from "../../../utils/types";
-import { createWall } from "../../../utils/createWall";
-import { destroyWall } from "../../../utils/destroyWall";
+import { createWall, destroyWall } from "../../../utils/wall";
 import { MAX_COLS, MAX_ROWS } from "../../../utils/constants";
 import { sleep } from "../../../helpers/sleep";
 import { isEqual } from "../../../helpers/grid";
