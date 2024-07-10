@@ -28,7 +28,7 @@ export const END_TILE_CONFIG = {
 };
 
 export const TILE_STYLE =
-    "lg:w-[17px] md:w-[15px] xs:w-[8px] w-[7px] lg:h-[17px] md:h-[15px] xs:h-[8px] h-[7px] border-t border-r border-sky-200";
+    "lg:w-[17px] md:w-[15px] sm:w-[12px] xs:w-[10px] xss:w-[8px] w-[7px] lg:h-[17px] md:h-[15px] sm:h-[12px] xs:h-[10px] xss:h-[8px] h-[7px] border-t border-r border-sky-200";
 
 export const TRAVERSED_TILE_STYLE = TILE_STYLE + " bg-cyan-400";
 

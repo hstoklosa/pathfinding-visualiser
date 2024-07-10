@@ -60,6 +60,11 @@ export default {
                 path: "path 1.5s cubic-bezier(0, 0, 0.2, 1)",
                 wall: "wall 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             },
+            screens: {
+                'xs': '510px',
+                'xss': '440px'
+                // => @media (min-width: 640px) { ... }
+            }
         },
     },
     plugins: [],
