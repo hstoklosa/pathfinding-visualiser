@@ -67,7 +67,6 @@ export const Navbar = ({
             return;
         }
 
-        // run the algorithm
         const { traversedTiles, path } = runPathfindingAlgorithm({
             algorithm,
             grid,

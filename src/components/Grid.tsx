@@ -45,13 +45,11 @@ export const Grid = ({
             className={twMerge(
                 "flex flex-col items-center justify-center border-sky-300 h-full",
                 `lg:min-h-[${MAX_ROWS * 17}px] md:min-h-[${MAX_ROWS * 15}px] 
-                sm:min-h-[${MAX_ROWS * 12}px] xs:min-h-[${MAX_ROWS * 10}px] min-h-[${
-                    MAX_ROWS * 7
-                }px]`,
+                sm:min-h-[${MAX_ROWS * 12}px] xs:min-h-[${MAX_ROWS * 10}px] 
+                min-h-[${MAX_ROWS * 7}px]`,
                 `lg:w-[${MAX_COLS * 17}px] md:w-[${MAX_COLS * 15}px] 
-                sm:w-[${MAX_COLS * 12}px] xs:w-[${MAX_COLS * 10}px] w-[${
-                    MAX_COLS * 7
-                }px]`
+                sm:w-[${MAX_COLS * 12}px] xs:w-[${MAX_COLS * 10}px] 
+                w-[${MAX_COLS * 7}px]`
             )}
         >
             {grid.map((r, rowIdx) => (

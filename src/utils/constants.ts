@@ -36,9 +36,9 @@ export const START_TILE_STYLE = TILE_STYLE + " bg-green-400";
 
 export const END_TILE_STYLE = TILE_STYLE + " bg-red-400";
 
-export const WALL_TILE_STYLE = TILE_STYLE + " bg-gray-400";
+export const WALL_TILE_STYLE = TILE_STYLE + " bg-gray-200";
 
-export const PATH_TILE_STYLE = TILE_STYLE + " bg-green-500";
+export const PATH_TILE_STYLE = TILE_STYLE + " bg-green-600";
 
 export const MAZE_LIST: MazeSelectType[] = [
     { name: "No Maze", value: "NONE" },
