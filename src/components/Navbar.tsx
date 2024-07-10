@@ -95,6 +95,7 @@ export const Navbar = ({
                     label="Maze"
                     value={maze}
                     options={MAZE_LIST}
+                    isDisabled={isDisabled}
                     onChange={(e) => handleGenerateMaze(e.target.value as MazeType)}
                 />
 
@@ -102,6 +103,7 @@ export const Navbar = ({
                     label="Graph"
                     value={algorithm}
                     options={ALGORITHM_LIST}
+                    isDisabled={isDisabled}
                     onChange={(e) => setAlgorithm(e.target.value as AlgorithmType)}
                 />
 
@@ -109,6 +111,7 @@ export const Navbar = ({
                     label="Speed"
                     value={speed}
                     options={SPEED_LIST}
+                    isDisabled={isDisabled}
                     onChange={(e) => setSpeed(parseInt(e.target.value) as SpeedType)}
                 />
 
