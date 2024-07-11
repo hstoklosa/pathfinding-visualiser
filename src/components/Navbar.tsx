@@ -99,7 +99,7 @@ export const Navbar = ({
                 />
 
                 <Select
-                    label="Graph"
+                    label="Algorithm"
                     value={algorithm}
                     options={ALGORITHM_LIST}
                     isDisabled={isDisabled}
