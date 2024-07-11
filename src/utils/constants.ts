@@ -41,7 +41,7 @@ export const WALL_TILE_STYLE = TILE_STYLE + " bg-gray-200";
 export const PATH_TILE_STYLE = TILE_STYLE + " bg-green-600";
 
 export const MAZE_LIST: MazeSelectType[] = [
-    { name: "No Maze", value: "NONE" },
+    { name: "None", value: "NONE" },
     { name: "Binary Tree", value: "BINARY_TREE" },
     { name: "Recursive Division", value: "RECURSIVE_DIVISION" },
 ];
