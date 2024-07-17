@@ -46,6 +46,7 @@ export const Navbar = ({
 
         setMaze(maze);
         setIsDisabled(true);
+
         runMazeAlgorithm({
             maze,
             grid,
@@ -75,6 +76,7 @@ export const Navbar = ({
         });
 
         animatePath(traversedTiles, path, startTile, endTile, speed);
+        
         setIsDisabled(true);
         isVisRunningRef.current = true;
 

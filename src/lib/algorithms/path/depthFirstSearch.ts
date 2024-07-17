@@ -1,6 +1,7 @@
 import { GridType, TileType } from "../../../utils/types";
 import { getUntraversedNeighbours } from "../../../utils/getUntraversedNeighbours";
 import { checkStack, isEqual } from "../../../helpers/grid";
+import { retrievePath } from "../../../utils/retrievePath";
 
 export const depthFirstSearch = (
     grid: GridType,
@@ -37,14 +38,7 @@ export const depthFirstSearch = (
         }
     }
 
-    const path = [];
-    let current = grid[endTile.row][endTile.col];
-
-    while (current !== null) {
-        current.isPath = true;
-        path.unshift(current);
-        current = current.parent!;
-    }
+    const path = retrievePath(grid, endTile);
 
     return { traversedTiles, path };
 };

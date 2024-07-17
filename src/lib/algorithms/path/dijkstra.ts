@@ -1,10 +1,11 @@
 import { isEqual } from "../../../helpers/grid";
 import { getUntraversedNeighbours } from "../../../utils/getUntraversedNeighbours";
 import { removeFromQueue } from "../../../utils/removeFromQueue";
+import { retrievePath } from "../../../utils/retrievePath";
 import { GridType, TileType } from "../../../utils/types";
 
 export const dijkstra = (grid: GridType, startTile: TileType, endTile: TileType) => {
-    const base = grid[startTile.row][startTile.col];
+    const base = grid[startTile.row][startTile.col]; 
     base.distance = 0;
     base.isTraversed = true;
 
@@ -13,8 +14,8 @@ export const dijkstra = (grid: GridType, startTile: TileType, endTile: TileType)
 
     while (untraversedTiles.length > 0) {
         untraversedTiles.sort((i, j) => i.distance - j.distance);
-        const currentTile = untraversedTiles.shift();
 
+        const currentTile = untraversedTiles.shift();
         if (currentTile) {
             if (currentTile.isWall) continue;
             if (currentTile.distance === Infinity) break;
@@ -38,14 +39,7 @@ export const dijkstra = (grid: GridType, startTile: TileType, endTile: TileType)
         }
     }
 
-    const path: TileType[] = [];
-    let currTile = grid[endTile.row][endTile.col];
-
-    while (currTile !== null) {
-        currTile.isPath = true;
-        path.unshift(currTile);
-        currTile = currTile.parent!;
-    }
+    const path = retrievePath(grid, endTile);
 
     return { traversedTiles, path };
 };
