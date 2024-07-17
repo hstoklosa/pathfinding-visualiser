@@ -1,6 +1,7 @@
 import { bfs } from "../lib/algorithms/path/bfs";
 import { depthFirstSearch } from "../lib/algorithms/path/depthFirstSearch";
 import { dijkstra } from "../lib/algorithms/path/dijkstra";
+import { aStar } from "../lib/algorithms/path/aStar";
 import { AlgorithmType, GridType, TileType } from "../utils/types";
 
 export const runPathfindingAlgorithm = ({
@@ -21,6 +22,8 @@ export const runPathfindingAlgorithm = ({
             return depthFirstSearch(grid, startTile, endTile);
         case "DIJKSTRA":
             return dijkstra(grid, startTile, endTile);
+        case "A_STAR":
+            return aStar(grid, startTile, endTile);
         default:
             return bfs(grid, startTile, endTile);
     }
