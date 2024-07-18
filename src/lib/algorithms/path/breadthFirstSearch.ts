@@ -4,7 +4,11 @@ import { getUntraversedNeighbours } from "../../../utils/getUntraversedNeighbour
 import { isInQueue } from "../../../utils/isInQueue";
 import { retrievePath } from "../../../utils/retrievePath";
 
-export const bfs = (grid: GridType, startTile: TileType, endTile: TileType) => {
+export const breadthFirstSearch = (
+    grid: GridType,
+    startTile: TileType,
+    endTile: TileType
+) => {
     const base = grid[startTile.row][startTile.col];
     base.distance = 0;
     base.isTraversed = true;

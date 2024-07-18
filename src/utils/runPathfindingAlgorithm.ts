@@ -1,4 +1,4 @@
-import { bfs } from "../lib/algorithms/path/bfs";
+import { breadthFirstSearch } from "../lib/algorithms/path/breadthFirstSearch";
 import { depthFirstSearch } from "../lib/algorithms/path/depthFirstSearch";
 import { dijkstra } from "../lib/algorithms/path/dijkstra";
 import { aStar } from "../lib/algorithms/path/aStar";
@@ -17,7 +17,7 @@ export const runPathfindingAlgorithm = ({
 }) => {
     switch (algorithm) {
         case "BFS":
-            return bfs(grid, startTile, endTile);
+            return breadthFirstSearch(grid, startTile, endTile);
         case "DFS":
             return depthFirstSearch(grid, startTile, endTile);
         case "DIJKSTRA":
@@ -25,6 +25,6 @@ export const runPathfindingAlgorithm = ({
         case "A_STAR":
             return aStar(grid, startTile, endTile);
         default:
-            return bfs(grid, startTile, endTile);
+            return breadthFirstSearch(grid, startTile, endTile);
     }
 };
