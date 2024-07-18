@@ -43,7 +43,7 @@ export const Grid = ({
     return (
         <div
             className={twMerge(
-                "flex flex-col items-center justify-center border-sky-300 h-full",
+                "flex flex-col items-center justify-center border-sky-300",
                 `lg:min-h-[${MAX_ROWS * 17}px] md:min-h-[${MAX_ROWS * 15}px] 
                 sm:min-h-[${MAX_ROWS * 12}px] xs:min-h-[${MAX_ROWS * 10}px] 
                 min-h-[${MAX_ROWS * 7}px]`,
